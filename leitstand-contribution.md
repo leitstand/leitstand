@@ -12,9 +12,9 @@ The diagram below illustrates the typical set of branches involved when working 
 1. The very first step is to create a fork of the Leitstand github repository.
 2. Next it is encouraged to create a feature branch in your fork.
 3. All changes are committed and pushed into the feature branch.
-4. Once all work is done create a squashed pull request from your feature branch.
+4. Once all work is done create a pull request from your feature branch.
    This might require to rebase the feature branch if the upstream repository has
-   been updated since the feature work was done.
+   been updated in the meanwhile.
 5. A Leitstand maintainer reviews the pull request and will accept it in order to add the contribution to the upstream master repository.
 6. The feature branch can be deleted if the pull request was accepted.
 
