@@ -1,8 +1,6 @@
 # Leitstand REST API Guidelines
 
-## Summary
 This document describes fundamental design guidelines for all Leitstand REST APIs.
-A formal description for each EMS REST API is provided as [Open API 3.0 specification](https://swagger.io/specification/).
 
 ## Statelessness and Idempotency
 
@@ -33,7 +31,7 @@ Dependencies, including the direction of a dependency, must be managed carefully
    This pattern can be used to resolve circular dependencies.
 
 ## JavaScript Object Notation (JSON)
-The preferred data-exchange format is [JSON](https://www.json.org).
+[JSON](https://www.json.org) is the preferred data-exchange format.
 
 ### Property Naming Conventions
 JSON lacks type definitions and therefore the type information is not part of the JSON message. 
@@ -49,8 +47,6 @@ This leads to consistent JSON objects and simplifies object validation.
 
 ## Hyper Text Transfer Protocol (HTTP)
 HTTP is an application protocol devised for resource management. 
-While being introduced for the transfer of Hype Text resources, HTTP is not limited to certain kinds of resources. 
-The `Content-Type` header defines the type of resource being transfered and of course the semantics of HTTP can be used to transfer JSON representation of resources or collections of resources respectively. 
 
 ### URI Path Conventions
 
@@ -61,16 +57,16 @@ A plural form of a noun represents a collection of resources, while the singular
 Leitstand follows the recommendation to form the plural by appending a _s_ to the noun, even if this is grammatically incorrect (e.g. _proxys_ instead of _proxies_).
 
 Hierarchies of resources are represented by path segments accordingly. 
-For example, `/elements` refers to the collection of elements while `/elements/l1.nbg/settings` refers to the settings of the element `l1.nbg`.
+For example, `/api/v1/elements` refers to the collection of elements while `/api/v1/elements/l1.nbg/settings` refers to the settings of the element `l1.nbg`.
 
 Resource operations are identified by a _verb_ prefixed with an underscore (`_`) by convention.
-For example, `/elements/l1.nbg/_clone` clones element `l1.nbg` and assigns a new serial number to the clone.
+For example, `/api/v1/elements/l1.nbg/_clone` clones element `l1.nbg` and assigns a new serial number to the clone.
 The clone operation is part of the switch replacement process and simplifies to apply the existing element configuration to a new hardware.
-
 
 ### API Version Management
 The API version is part of the request URI and identifies the requested version of an API. 
 The API version gets incremented whenever a non-backwardcompatible modification has been made.
+
 
 ### HTTP Verbs
 
