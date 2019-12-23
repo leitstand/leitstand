@@ -1,2 +1,4 @@
 # Ignore markdown preview files
 *.md.html
+# Ignore eclipse IDE project settings
+.project
