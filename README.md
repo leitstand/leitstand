@@ -34,7 +34,8 @@ Each application can contribute new views to the Leistand UI.
 - The [leitstand-job](../leitstand-job/README.md) repository contains the Leitstand Job Scheduler to execute management jobs. 
 - The [leitstand-events](../leitstand-events/README.md) repository contains transactual domain event support to subscribe for resource inventory or job state changes.
 - The [leitstand-security](../leitstand-security/README.md) repository contains a built-in user repository, access key support for inter-system authentication, encryption utilities, and OAuth 2.0 support.
-- The [leitstand-ui](../leitstand-ui/README.md) repository contains the Leitstand UI framework and cross-cutting UI functions (e.g. login/logut).
+- The [leitstand-ui](../leitstand-ui/README.md) repository contains the Leitstand UI framework and cross-cutting UI functions (e.g. login/logout).
+- The [leitstand-commons](../leitstand-commons/README.md) repository contains Leitstand module foundation classes.
 
 ### Leitstand Connectors
 
@@ -42,9 +43,9 @@ Each application can contribute new views to the Leistand UI.
 
 ### Leitstand Applications
 
-The following Leitstand Applications are in the pipeline for being open-sourced and will be available early in Q1/20.
+The following Leitstand Applications are in the pipeline for being open-sourced:
 
-- __Log Application__, the log application connects Leitstand with elasticsearch and supplies conext-sensitive log searches by means of generating queries from inventory records. This simplifies the search for log messages for a certain element or group of elements.
-- __Telemetry Application__, the telementry application allows to configure metrics that can be sampled from the elements including their visualization and monitoring. It also includes Leitstand Connectors for Prometheus and Grafana.
-- __Topology Application__, the topology application visualizes the link-state graph of a disaggregated  network.
+- __Log Application__, the log application connects Leitstand with elasticsearch and provides context-sensitive log event list views by means of generating log event queries from inventory records. This simplifies the search for log messages for a certain element or group of elements.
+- __Telemetry Application__, the telemetry application allows to configure metrics that can be sampled from the elements including their visualization and monitoring rules. It also includes Leitstand Connectors for Prometheus and Grafana.
+- __Topology Application__, the topology application visualizes the link-state graph of the  disaggregated  network.
 
