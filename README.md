@@ -1,16 +1,30 @@
 # Leitstand in a Nutshell
 
-Leitstand aims to create a disaggregated management system for disaggregated access networks by means of providing the foundation to model the resources forming the network and an environment to implement management applications supplying the actual network management functions.
+Leitstand aims to create a disaggregated management system for disaggregated access networks 
+by means of providing the foundation to model the resources forming the network and 
+an environment to implement network management _applications_ supplying network management functions.
+The scope of an application ranges from small applications that address a single management aspect for a certain element role to generic applications that can be used for all element roles of an access network.
 
 ![Leitstand Overview](./doc/assets/leitstand_overview.png "Leitstand Overview") 
 
 Leitstand relies on _service-oriented architecture_ , 
 loose coupling through [REST APIs](./doc/REST.md) and 
-service encapsulation in docker containers in order to support a distributed deployment.
-The Leitstand architecture is also influenced by Eric Evans domain-driven design, in the sense of putting the focus on the network management domain and leveraging open-source software for general management aspects like log management, telemetry streaming, or time series visualization. 
-Connectors are specialized services to connect Leitstand with third-party products.
+service encapsulation in docker containers.
+Leitstand is also influenced by Eric Evans Domain-Driven Design, 
+in the sense of putting the focus on the network management domain and 
+leveraging open-source software for general management aspects like log management, telemetry streaming, or time series visualization. 
 
-The [Leitstand Web User Interface](../leitstand-ui/README.md) relies on the REST APIs and allows to manage the resource inventory and to use the Leitstand applications.
+Integration of third-party components is provided by Leitstand applications.
+For example, a log management application connects Leitstand with a specialized log management system.
+The integration of the third-party component is typically encapsulated in a dedicated _connector_ service. 
+The connector implements a REST-API defined by the Leitstand application and translates Leitstand REST-API calls to API calls of the component to be integrated.
+In addition, the connector implements resiliency patterns to guarantee a robust integration of the third-party component and to minimize the blast radius if the third-party component is temporarily unavailable.
+Last but not least, the segregation of business logic and integration allows to reuse the business logic when integrating an alternative third-party component supplier. 
+Say the business logic of the log management component creates a query to search for all log events of a particular element or group of elements and the connector merely translates this query to a query of the underlying log management system, then just one more connector is needed to support an additional log management system.
+This segreggation also simplifies the support of different versions of the same log management system.
+
+The [Leitstand Web User Interface](../leitstand-ui/leitstand-ui-web/README.md) enables a user to work with the REST APIs provided by the Leitstand application and platform services.
+Each application can contribute new views to the Leistand UI.
 
 ## Repositories
 
