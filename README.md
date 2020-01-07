@@ -23,23 +23,23 @@ Last but not least, the segregation of business logic and integration allows to 
 Say the business logic of the log management component creates a query to search for all log events of a particular element or group of elements and the connector merely translates this query to a query of the underlying log management system, then just one more connector is needed to support an additional log management system.
 This segreggation also simplifies the support of different versions of the same log management system.
 
-The [Leitstand Web User Interface](../leitstand-ui/leitstand-ui-web/README.md) enables a user to work with the REST APIs provided by the Leitstand application and platform services.
+The [Leitstand Web User Interface](https://github.com/leitstand/leitstand-ui) enables a user to work with the REST APIs provided by the Leitstand application and platform services.
 Each application can contribute new views to the Leistand UI.
 
 ## Repositories
 
 ### Leitstand Platform
 
-- The [leitstand-inventory](../leitstand-inventory/README.md) repository contains the Leitstand Resource Inventory to store all elements of a disaggregated access network.
-- The [leitstand-job](../leitstand-job/README.md) repository contains the Leitstand Job Scheduler to execute management jobs. 
-- The [leitstand-events](../leitstand-events/README.md) repository contains transactual domain event support to subscribe for resource inventory or job state changes.
-- The [leitstand-security](../leitstand-security/README.md) repository contains a built-in user repository, access key support for inter-system authentication, encryption utilities, and OAuth 2.0 support.
-- The [leitstand-ui](../leitstand-ui/README.md) repository contains the Leitstand UI framework and cross-cutting UI functions (e.g. login/logout).
-- The [leitstand-commons](../leitstand-commons/README.md) repository contains Leitstand module foundation classes.
+- The [leitstand-inventory](https://github.com/leitstand/leitstand-inventory) repository contains the Leitstand Resource Inventory to store all elements of a disaggregated access network.
+- The [leitstand-job](https://github.com/leitstand/leitstand-job) repository contains the Leitstand Job Scheduler to execute management jobs. 
+- The [leitstand-events](https://github.com/leitstand/leitstand-events) repository contains transactual domain event support to subscribe for resource inventory or job state changes.
+- The [leitstand-security](https://github.com/leitstand/leitstand-security) repository contains a built-in user repository, access key support for inter-system authentication, encryption utilities, and OAuth 2.0 support.
+- The [leitstand-ui](https://github.com/leitstand/leitstand-ui) repository contains the Leitstand UI framework and cross-cutting UI functions (e.g. login/logout).
+- The [leitstand-commons](https://github.com/leitstand/leitstand-commons) repository contains Leitstand module foundation classes.
 
 ### Leitstand Connectors
 
-- The [leitstand-powerdns](../leitstand-powerdns/README.md) connector forwards DNS record changes to PowerDNS. PowerDNS can either be used as DNS server or as gateway to manage DNS records in the actual DNS server.
+- The [leitstand-powerdns](https://github.com/leitstand/leitstand-powerdns) connector forwards DNS record changes to PowerDNS. PowerDNS can either be used as DNS server or as gateway to manage DNS records in the actual DNS server.
 
 ### Leitstand Applications
 
